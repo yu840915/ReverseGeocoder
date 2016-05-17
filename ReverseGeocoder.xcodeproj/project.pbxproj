@@ -12,6 +12,7 @@
 		318DB75D1CE8BD820082BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318DB75C1CE8BD820082BAAE /* Assets.xcassets */; };
 		318DB7601CE8BD820082BAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318DB75E1CE8BD820082BAAE /* Main.storyboard */; };
 		318DB76B1CE8BD830082BAAE /* ReverseGeocoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB76A1CE8BD830082BAAE /* ReverseGeocoderTests.swift */; };
+		31E691881CEB618B0010D99A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E691871CEB618B0010D99A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 		318DB7661CE8BD830082BAAE /* ReverseGeocoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReverseGeocoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		318DB76A1CE8BD830082BAAE /* ReverseGeocoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocoderTests.swift; sourceTree = "<group>"; };
 		318DB76C1CE8BD830082BAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31E691871CEB618B0010D99A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		31E691891CEB618B0010D99A /* ReverseGeocoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ReverseGeocoder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E691881CEB618B0010D99A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 		318DB74C1CE8BD820082BAAE = {
 			isa = PBXGroup;
 			children = (
+				31E691871CEB618B0010D99A /* MapKit.framework */,
 				318DB7571CE8BD820082BAAE /* ReverseGeocoder */,
 				318DB7691CE8BD830082BAAE /* ReverseGeocoderTests */,
 				318DB7561CE8BD820082BAAE /* Products */,
@@ -75,6 +80,7 @@
 		318DB7571CE8BD820082BAAE /* ReverseGeocoder */ = {
 			isa = PBXGroup;
 			children = (
+				31E691891CEB618B0010D99A /* ReverseGeocoder.entitlements */,
 				318DB7581CE8BD820082BAAE /* AppDelegate.swift */,
 				318DB75A1CE8BD820082BAAE /* ViewController.swift */,
 				318DB75C1CE8BD820082BAAE /* Assets.xcassets */,
@@ -143,6 +149,12 @@
 				TargetAttributes = {
 					318DB7541CE8BD820082BAAE = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = G3G742W25V;
+						SystemCapabilities = {
+							com.apple.Maps.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 					318DB7651CE8BD830082BAAE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -314,11 +326,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReverseGeocoder/ReverseGeocoder.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ReverseGeocoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yu840915.ReverseGeocoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -326,11 +342,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReverseGeocoder/ReverseGeocoder.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ReverseGeocoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yu840915.ReverseGeocoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -379,6 +399,7 @@
 				318DB7711CE8BD830082BAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		318DB7721CE8BD830082BAAE /* Build configuration list for PBXNativeTarget "ReverseGeocoderTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +408,7 @@
 				318DB7741CE8BD830082BAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
